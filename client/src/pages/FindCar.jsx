@@ -52,7 +52,7 @@ const FindCar = () => {
   const [sortOrder, setSortOrder]   = useState("ecoDesc");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/cars")
+    fetch(`${import.meta.env.VITE_API_URL}/api/cars`)
       .then(r => r.json())
       .then(d => { setCars(d.cars); setLoading(false); })
       .catch(e => { setError(e.message); setLoading(false); });
